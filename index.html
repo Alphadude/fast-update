@@ -13,6 +13,9 @@
       name="viewport"
       content="width=device-width,initial-scale=1,shrink-to-fit=no"
     />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <meta
       name="title"
       content="FastBite - Get Hot Meals Delivered Fast with FastBite"
@@ -25,10 +28,6 @@
     <meta
       name="keywords"
       content="FastBite - Get Hot Meals Delivered Fast with FastBite"
-    />
-    <link
-      rel="canonical"
-      href="https://themesberg.com/product/bootstrap/swipe-free-mobile-app-one-page-bootstrap-5-template"
     />
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -43,7 +42,7 @@
     />
     <meta
       property="og:image"
-      content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/swipe/swipe-thumbnail.jpg"
+      content="assets/img/three.png"
     />
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -58,7 +57,7 @@
     />
     <meta
       property="twitter:image"
-      content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/swipe/swipe-thumbnail.jpg"
+      content="assets/img/three.png"
     />
     <!-- Favicon -->
     <link
@@ -202,13 +201,15 @@
             <a
               href="#"
               target="_blank"
-              class="btn btn-outline-soft d-none d-md-inline mr-md-3 animate-up-2"
-              >Apple Download<i class="fab fa-apple ml-2"></i></a>
+              class="btn btn-outline-soft d-none d-md-inline mr-md-3 animate-up-2">
+              Apple Download
+              <i class="fab fa-apple ml-2"></i></a>
             <a
               href="#"
               target="_blank"
-              class="btn btn-md btn-tertiary text-white d-none d-md-inline animate-up-2"
-              >Android Download<i class="fab fa-google-play ml-2"></i></a>
+              class="btn btn-md btn-tertiary text-white d-none d-md-inline animate-up-2">
+              Android Download
+              <i class="fab fa-google-play ml-2"></i></a>
             <button
               class="navbar-toggler ml-2"
               type="button"
@@ -216,8 +217,7 @@
               data-target="#navbar_global"
               aria-controls="navbar_global"
               aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
+              aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
           </div>
@@ -225,61 +225,62 @@
       </nav>
     </header>
     <main>
-      <!-- Hero -->
-      <section class="section section-header text-dark pb-md-8">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-12 col-md-10 text-center mb-5 mb-md-7">
-              <h1 class="display-2 font-weight-bolder mb-4">
-                Get Hot Meals Delivered Fast with FastBite
-              </h1>
-              <p class="lead mb-4 mb-lg-5">
-                Craving something delicious? Discover food vendors around you and get your favorite meals delivered right to your doorstep—fast, fresh, and hassle-free.
-              </p>
-              <div>
-                <a
-                  href="#"
-                  class="btn btn-dark btn-download-app mb-xl-0 mr-2 mr-md-3"
-                  ><span class="d-flex align-items-center"
-                    ><span class="icon icon-brand mr-2 mr-md-3"
-                      ><span class="fab fa-apple"></span
-                    ></span>
-                    <span class="d-inline-block text-left"
-                      ><small class="font-weight-normal d-none d-md-block"
-                        >Available on</small
-                      >
-                      App Store
-                    </span></span
-                  ></a
-                ><a href="#" class="btn btn-dark btn-download-app"
-                  ><span class="d-flex align-items-center"
-                    ><span class="icon icon-brand mr-2 mr-md-3"
-                      ><span class="fab fa-google-play"></span></span>
-                    <span class="d-inline-block text-left">
-                      <small class="font-weight-normal d-none d-md-block">Available on</small>
-                      Google Play</span>
-                    </span>
-                  </a>
-              </div>
+      <section class="section section-header text-dark relative overflow-hidden pb-0 mb-0" style="background-image: url('assets/img/bg.jpg'); background-size: cover; background-position: center;">
+        <!-- Overlay for better text readability on background image -->
+        <div class="relative inset-0 bg-white opacity-10 z-0"></div>
+    
+        <div class="container relative z-10 py-16 md:py-24 pb-0 mb-0">
+            <div class="flex flex-col md:flex-row items-center md:items-start justify-between">
+                <!-- Left Column: Text and Buttons -->
+                <div class="col-lg-6 md:w-1/2 text-left md:text-left mb-8 md:mb-0 md:pr-8">
+                    <h1 class="display-2 font-weight-bolder mb-4 text-black">
+                      Get Hot Meals Delivered Fast with FastBite
+                    </h1>
+                    <p class="lead mb-4 mb-lg-5 text-black-100">
+                        Craving something delicious? Discover food vendors around you and get your favorite meals delivered right to your doorstep—fast, fresh, and hassle-free.
+                    </p>
+                    <div class="mt-4 mt-lg-5">
+                        <a href="#" class="btn btn-dark btn-download-app mb-xl-0 mr-2 mr-md-3">
+                            <span class="d-flex align-items-center">
+                                <span class="icon icon-brand mr-2 mr-md-3">
+                                    <span class="fab fa-apple"> </span>
+                                </span>
+                                <span class="d-inline-block text-left">
+                                    <small class="font-weight-normal d-none d-md-block">Available on</small>
+                                    App Store
+                                </span>
+                            </span>
+                        </a>
+                        <a href="#" class="btn btn-dark btn-download-app">
+                            <span class="d-flex align-items-center">
+                                <span class="icon icon-brand mr-2 mr-md-3">
+                                    <span class="fab fa-google-play"> </span>
+                                </span>
+                                <span class="d-inline-block text-left">
+                                    <small class="font-weight-normal d-none d-md-block">Available on</small>
+                                    Google Play
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+    
+                <!-- Right Column: Image -->
+                <div class="col-lg-6 md:w-1/2 flex justify-center md:mt-0 md:pl-8">
+                    <img class="w-full max-w-sm md:max-w-none h-auto rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-500 ease-in-out" src="assets/img/hero-image.png" alt="Mobile App Mockup" />
+                </div>
             </div>
-            <div class="col-12 col-md-10 justify-content-center">
-              <img
-                class="d-none d-md-inline-block"
-                src="assets/img/illustrations/hero1.png"
-                alt="Mobile App Mockup"
-              />
-            </div>
-          </div>
         </div>
       </section>
-      <section class="section section-lg py-0">
+   
+      <section class="section section-lg py-0 mt-8">
         <div class="container">
           <div class="row">
             <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
               <div class="card border-0 bg-white text-center p-1">
                 <div class="card-header bg-white border-0 pb-0">
                   <div class="icon icon-lg icon-primary mb-4">
-                    <img src="assets/img/illustrations/vendors.png" class="w-100" alt=""/>
+                    <img src="assets/img/illustrations/vendors.png" class="w-50" alt=""/>
                   </div>
                   <h2 class="h3 text-dark m-0">Discover Local Vendors</h2>
                 </div>
@@ -294,7 +295,7 @@
               <div class="card border-0 bg-white text-center p-1">
                 <div class="card-header bg-white border-0 pb-0">
                   <div class="icon icon-lg icon-primary mb-4">
-                    <img src="assets/img/illustrations/order.png" class="w-100" alt=""/>
+                    <img src="assets/img/illustrations/order.png" class="w-50" alt=""/>
                   </div>
                   <h2 class="h3 text-dark m-0">Order your favorite Meal</h2>
                 </div>
@@ -310,9 +311,9 @@
               <div class="card border-0 bg-white text-center p-1">
                 <div class="card-header bg-white border-0 pb-0">
                   <div class="icon icon-lg icon-primary mb-4">
-                    <img src="assets/img/illustrations/fast.png" class="w-100" alt=""/>
+                    <img src="assets/img/illustrations/fast.png" class="w-50" alt=""/>
                   </div>
-                  <h2 class="h3 text-dark m-0">fast Delivery to your Doorstep</h2>
+                  <h1 class="h2 text-dark m-0">fast Delivery to your Doorstep</h1>
                 </div>
                 <div class="card-body">
                   <p>
@@ -337,7 +338,7 @@
           </div>
           <div class="row row-grid align-items-center mb-5 mb-lg-7">
             <div class="col-12 col-lg-5">
-              <h2 class="mb-4">Speed your can taste</h2>
+              <h2 class="h3 text-dark mb-4">Speed your can taste</h2>
               <p>
                 Fastbite delivers your meals hot and fresh—just like they were served straight from the kitchen. Our efficient delivery network ensures minimal wait time, so every bite feels like it just came off the stove.
               </p>
@@ -358,7 +359,8 @@
           </div>
           <div class="row row-grid align-items-center mb-5 mb-lg-7">
             <div class="col-12 col-lg-5 order-lg-2">
-              <h2 class="mb-4">Local Flavour, Wide Variety.</h2>
+              
+              <h2 class="h3 text-dark mb-4">Local Flavour, Wide Variety</h2>
               <p>FastBite connects you with a rich mix of neighborhood vendors offering everything from traditional local dishes to modern favorites. Whether you're craving jollof rice, shawarma, soups, or smoothies, there's something for every appetite.
               </p>
               <a href="#testimonials" class="btn btn-dark mt-3 animate-up-2"
@@ -377,7 +379,8 @@
           </div>
           <div class="row row-grid align-items-center mb-5 mb-lg-7">
             <div class="col-12 col-lg-5">
-              <h2 class="mb-4">Track your order in real time</h2>
+              
+              <h2 class="h3 text-dark mb-4">Track your order in real time</h2>
               <p>Stay in the loop from the moment you order to delivery. With real-time tracking, you can see when your food is being prepared, picked up, and exactly where your rider is on the map.
               </p>
               <a href="#testimonials" class="btn btn-dark mt-3 animate-up-2"
@@ -396,7 +399,7 @@
           </div>
           <div class="row">
             <div class="col-12 col-md-6 col-lg-4 mb-4">
-              <div class="card border-light p-4">
+              <div class="card border-light p-4 text-white" style="background-color: #2d6a4f;" >
                 <div class="card-body">
                   <h2 class="display-2 mb-2">30mins</h2>
                   <span
@@ -406,44 +409,42 @@
               </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4 mb-4">
-              <div class="card border-light p-4">
-                <div class="card-body">
+              <div class="card border-light p-4 text-white" style="background-color: #2d6a4f;" >
+                <div class="card-body" >
                   <h2 class="display-2 mb-2">1k+</h2>
                   <span>Resturants.</span>
                 </div>
               </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4 mb-4">
-              <div class="card border-light p-4">
+              <div class="card border-light p-4 text-white" style="background-color: #2d6a4f;">
                 <div class="card-body">
                   <h2 class="display-2 mb-2">Live</h2>
-                  <span
-                    >Real Tracking update.</span
-                  >
+                  <span>Real Tracking update.</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <div class="section section-sm py-0">
+      <div class="section section-sm py-0 pt-6 pb-6 bg-gray-200">
         <div class="container">
           <div class="row text-center mb-5">
             <div class="col">
-              <h2 class="h6 font-weight-bold text-brown">
-                Get your meals from trusted brands
-              </h2>
+              <h1 class="display-2 font-weight-bolder mb-4 text-black">
+                Get Hot Meals Delivered Fast with FastBite
+              </h1>
             </div>
           </div>
           <div class="row text-center">
             <div class="col d-flex justify-content-center flex-wrap">
               <a href="#" 
-                  aria-label="kilimanjaro"
+                  aria-label="genesis"
                   class="icon icon-xl icon-dark mr-4 mr-sm-5"
                   data-toggle="tooltip"
                   data-placement="top"
-                  title="kilimanjaro">
-                  <img src="assets/img/illustrations/genesis.png" alt="kilimanjaro" class="img-fluid">
+                  title="genesis">
+                  <img src="assets/img/illustrations/genesis.png" alt="genesis" class="img-fluid">
               </a>
               <a href="#" 
                   aria-label="kilimanjaro"
@@ -454,20 +455,20 @@
                   <img src="assets/img/illustrations/kilimanjaro.png" alt="kilimanjaro" class="img-fluid">
               </a>
               <a href="#" 
-                  aria-label="kilimanjaro"
+                  aria-label="genesis"
                   class="icon icon-xl icon-dark mr-4 mr-sm-5"
                   data-toggle="tooltip"
                   data-placement="top"
-                  title="kilimanjaro">
-                  <img src="assets/img/illustrations/genesis.png" alt="kilimanjaro" class="img-fluid">
+                  title="genesis">
+                  <img src="assets/img/illustrations/genesis.png" alt="genesis" class="img-fluid">
               </a>
               <a href="#" 
-                  aria-label="kilimanjaro"
+                  aria-label="chicken"
                   class="icon icon-xl icon-dark mr-4 mr-sm-5"
                   data-toggle="tooltip"
                   data-placement="top"
-                  title="kilimanjaro">
-                  <img src="assets/img/illustrations/chicken.png" alt="kilimanjaro" class="img-fluid">
+                  title="chicken">
+                  <img src="assets/img/illustrations/chicken.png" alt="chicken" class="img-fluid">
               </a>
               <a href="#" 
                   aria-label="kilimanjaro"
@@ -478,20 +479,20 @@
                   <img src="assets/img/illustrations/kilimanjaro.png" alt="kilimanjaro" class="img-fluid">
               </a>
               <a href="#" 
-                  aria-label="kilimanjaro"
+                  aria-label="chicken"
                   class="icon icon-xl icon-dark mr-4 mr-sm-5"
                   data-toggle="tooltip"
                   data-placement="top"
-                  title="kilimanjaro">
-                  <img src="assets/img/illustrations/chicken.png" alt="kilimanjaro" class="img-fluid">
+                  title="chicken">
+                  <img src="assets/img/illustrations/chicken.png" alt="chicken" class="img-fluid">
               </a>
               <a href="#" 
-                  aria-label="kilimanjaro"
+                  aria-label="genesis"
                   class="icon icon-xl icon-dark mr-4 mr-sm-5"
                   data-toggle="tooltip"
                   data-placement="top"
-                  title="kilimanjaro">
-                  <img src="assets/img/illustrations/genesis.png" alt="kilimanjaro" class="img-fluid">
+                  title="genesis">
+                  <img src="assets/img/illustrations/genesis.png" alt="genesis" class="img-fluid">
               </a>
             </a>
             </div>
@@ -897,7 +898,7 @@
                   </a>
               </div>
             </div>
-            <div class="col-12 col-lg-5 ml-lg-auto">
+            <div class="col-12 col-lg-5 ml-lg-auto mt-0">
               <img
                 class="d-none d-lg-inline-block"
                 src="assets/img/three.png"
@@ -921,26 +922,24 @@
         <div class="row justify-content-between">
           <div class="col-md-4">
             <img
-                class="d-none d-lg-inline-block"
+                class="d-none d-lg-inline-block mb-4 " width="250px"
                 src="assets/img/logo.png"
                 alt="Mobile App Illustration"/>
-              
             <p class="text-white">
               Craving something delicious? Discover food vendors around you and get your favorite meals delivered right to your doorstep—fast, fresh, and hassle-free.
             </p>
             <ul class="social-buttons mb-5 mb-lg-0">
               <li>
-                <a
-                  href="#"
+                <a href="#"
                   aria-label="twitter social link"
                   class="icon icon-md icon-twitter mr-3"
-                  ><span class="fab fa-twitter"></span
-                ></a>
+                  ><span class="fab fa-twitter"></span>
+              </a>
               </li>
               <li>
                 <a
                   href="#"
-                  class="icon icon-md icon-facebook mr-3"
+                  class="icon icon-md icon-facebook mr-3 text-white"
                   aria-label="facebook social link"
                   ><span class="fab fa-facebook"></span
                 ></a>
@@ -948,18 +947,19 @@
               <li>
                 <a
                   href="#"
-                  aria-label="github social link"
-                  class="icon icon-md icon-instagram mr-3">
-                  <span class="fab fa-instagram"></span>
+                  aria-label="instagram social link"
+                  class="icon icon-md icon-instagram mr-3 text-white"
+                >
+                  <span class="fab fa-instagram"></span> <!-- Corrected to fa-instagram -->
                 </a>
               </li>
               <li>
                 <a
                   href="#"
-                  class="icon icon-md icon-linkedin"
-                  aria-label="dribbble social link"><span class="fab fa-linkedin">
-
-                  </span>
+                  class="icon icon-md icon-linkedin text-white"
+                  aria-label="linkedin social link"
+                > <!-- Corrected aria-label -->
+                  <span class="fab fa-linkedin"></span>
                 </a>
               </li>
             </ul>
@@ -982,15 +982,15 @@
             <a
               href="https://helixgade.com.ng/"
               target="_blank"
-              class="d-flex justify-content-center">
+              class="d-flex justify-content-left">
               <img
-                src="assets/img/fav-white.png"
-                height="25"
+                src="assets/img/fav-white.png" 
+                width="100px"
                 class="mb-3"
                 alt="FastBite Logo"/>
               </a>
               <div
-              class="d-flex text-center justify-content-center align-items-center"
+              class="d-flex text-center justify-content-left align-items-center"
               role="contentinfo">
               <p class="font-weight-normal font-small mb-0 text-white">
                 Copyright © Fastbite <span class="current-year">2025</span>. All rights reserved.
