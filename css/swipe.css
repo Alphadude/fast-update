@@ -34324,6 +34324,11 @@ blockquote {
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
 }
 
+.btn {
+  @apply inline-flex items-center font-medium transition duration-300 ease-in-out;
+}
+
+
 /* Responsive image sizing and hover effect */
 .custom-hero-img {
   width: 100%;

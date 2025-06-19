@@ -31,6 +31,8 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Fontawesome CDN (Replaced local path for wider compatibility) -->
+
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <link
       type="text/css"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
@@ -83,77 +85,72 @@
       ></iframe
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <header class="header-global" id="home">
-      <nav
-        id="navbar-main"
-        aria-label="Primary navigation"
-        class="navbar navbar-main navbar-expand-lg navbar-theme-primary headroom navbar-light navbar-theme-secondary"
-      >
-        <div class="container position-relative">
-          <a class="navbar-brand mr-lg-4" href="index.html"
-            ><img class="navbar-brand-dark" src="assets/img/fav-white.png" alt="Logo light" />
-            <img class="navbar-brand-light" src="assets/img/fav.png" alt="Logo dark"
-          /></a>
-          <div class="navbar-collapse collapse mr-auto" id="navbar_global">
-            <div class="navbar-collapse-header">
-              <div class="row">
-                <div class="col-6 collapse-brand">
-                  <a href="index.html"
-                    ><img src="assets/img/fav.png" alt="Logo dark"
-                  /></a>
-                </div>
-                <div class="col-6 collapse-close">
-                  <a
-                    href="#navbar_global"
-                    class="fas fa-times"
-                    data-toggle="collapse"
-                    data-target="#navbar_global"
-                    aria-controls="navbar_global"
-                    aria-expanded="false"
-                    title="close"
-                    aria-label="Toggle navigation"
-                  ></a>
-                </div>
-              </div>
-            </div>
-            <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
-              <li class="nav-item">
-                <a href="privacy.html" class="nav-link">Privacy Policy</a>
-              </li>
-              <li class="nav-item">
-                <a href="#testimonials" class="nav-link">Testimonials</a>
-              </li>
-              <li class="nav-item"><a href="#faq" class="nav-link">FAQ</a></li>
-            </ul>
-          </div>
-          <div class="d-flex align-items-center">
-            <a
-              href="#"
-              target="_blank"
-              class="btn btn-outline-soft d-none d-md-inline mr-md-3 animate-up-2"
-              >Apple Download<i class="fab fa-apple ml-2"></i
-            ></a>
-            <a
-              href="#"
-              target="_blank"
-              class="btn btn-md btn-tertiary text-white d-none d-md-inline animate-up-2"
-              >Android Download<i class="fab fa-google-play ml-2"></i
-            ></a>
-            <button
-              class="navbar-toggler ml-2"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbar_global"
-              aria-controls="navbar_global"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          </div>
-        </div>
-      </nav>
-    </header>
+    <!-- Include Alpine.js -->
+
+
+<header id="home" class="w-full fixed top-0 z-50 bg-white shadow" x-data="{ open: false }">
+  <nav class="w-full">
+    <div class="container mx-auto flex items-center justify-between relative px-4 py-3">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center mr-4">
+        <img src="assets/img/fav.png" alt="Logo light" class="hidden dark:block h-8 w-auto" />
+        <img src="assets/img/fav.png" alt="Logo dark" class="block dark:hidden h-8 w-auto" />
+      </a>
+
+      <!-- Mobile Toggle Button -->
+      <button
+        class="lg:hidden flex items-center px-3 py-2 border rounded text-gray-600 border-gray-400"
+        @click="open = !open"
+        aria-label="Toggle navigation">
+        <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+          <path
+            x-show="!open"
+            fill-rule="evenodd"
+            d="M3 5h14a1 1 0 010 2H3a1 1 0 110-2zm0 6h14a1 1 0 010 2H3a1 1 0 010-2zm0 6h14a1 1 0 010 2H3a1 1 0 010-2z"
+            clip-rule="evenodd"
+          />
+          <path
+            x-show="open"
+            fill-rule="evenodd"
+            d="M6 6L14 14M6 14L14 6"
+            clip-rule="evenodd"
+            class="hidden"
+          />
+        </svg>
+      </button>
+
+      <!-- Nav Links -->
+      <div class="absolute top-full left-0 w-full bg-white lg:static lg:flex lg:items-center lg:space-x-6" :class="{ 'block': open, 'hidden': !open }" x-cloak>
+        <ul class="flex flex-col lg:flex-row lg:items-center space-y-4 lg:space-y-0 lg:space-x-6">
+          <li><a href="#testimonials" class="text-gray-800 hover:text-blue-600">Testimonials</a></li>
+          <li><a href="#faq" class="text-gray-800 hover:text-blue-600">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="hidden lg:flex lg:items-center lg:space-x-6" id="navbar_global">
+        <ul class="flex flex-col lg:flex-row lg:items-center space-y-2 lg:space-y-0 lg:space-x-6">
+          <li><a href="#testimonials" class="text-gray-800 hover:text-blue-600">Testimonials</a></li>
+          <li><a href="#faq" class="text-gray-800 hover:text-blue-600">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Action Buttons (hide on mobile) -->
+      
+      <div class="hidden md:flex items-center space-x-3">
+        <a href="#" target="_blank"
+           class="btn border border-gray-300 text-gray-800 hover:bg-gray-100 px-4 py-2 rounded transition">
+          Apple Download <i class="fab fa-apple ml-2"></i>
+        </a>
+        <a href="#" target="_blank"
+           class="btn bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+          Android Download <i class="fab fa-google-play ml-2"></i>
+        </a>
+      </div>
+      
+    </div>
+  </nav>
+</header>
+
     <main>
       <!-- ========================================================== -->
       <!-- ============ START OF HERO SECTION ============ -->
