@@ -10187,7 +10187,7 @@ button.close {
   border-color: #eff1f5 !important;
 }
 .border-gray-300 {
-  border-color: #f9fafe !important;
+  border-color: #2D6A4F !important;
 }
 .border-gray-400 {
   border-color: #e5eaf4 !important;
@@ -11837,7 +11837,7 @@ button.close {
   background-color: #171f38 !important;
 }
 .bg-blue {
-  background-color: #0d6efd !important;
+  background-color: #2D6A4F !important;
 }
 .bg-purple {
   background-color: #6f42c1 !important;
@@ -34317,3 +34317,29 @@ blockquote {
 .ct-line {
   pointer-events: none;
 }
+
+
+/* Rounded corners and shadow (Bootstrap already handles this) */
+.shadow-lg {
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+
+/* Responsive image sizing and hover effect */
+.custom-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Keeps the image aspect ratio within its container */
+}
+
+@media (min-width: 768px) {
+  .custom-hero-img {
+    max-width: none;
+  }
+}
+
+/* Hover scale effect */
+.custom-hero-img:hover {
+  transform: scale(1.05);
+}
+
+

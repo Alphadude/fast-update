@@ -159,79 +159,116 @@
       <!-- ============ START OF HERO SECTION ============ -->
       <!-- ========================================================== -->
 
-      <section
-        class="section section-header text-dark pb-md-8 relative overflow-hidden"
-        style="
-          background-image: url('assets/img/bg.jpg');
-          background-size: cover;
-          background-position: center;
-        "
-      >
+      <section class="section section-header text-dark relative overflow-hidden pb-0 mb-0" style="background-image: url('assets/img/bg.jpg'); background-size: cover; background-position: center;">
         <!-- Overlay for better text readability on background image -->
-        <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
-
-        <div class="container relative z-10 py-16 md:py-24">
-          <!-- This div creates the side-by-side layout on medium screens and up -->
-          <div
-            class="flex flex-col md:flex-row items-center md:items-start justify-between"
-          >
-            <!-- Left Column: Text and Buttons (takes half width on desktop) -->
-            <div class="col-lg-6 md:w-1/2 text-left mb-8 md:mb-0 md:pr-8">
-              <h1 class="display-2 font-weight-bolder mb-4 text-white">
-                Get Hot Meals Delivered Fast with FastBite
-              </h1>
-              <p class="lead mb-4 mb-lg-5 text-gray-200">
-                Craving something delicious? Discover food vendors around you and get
-                your favorite meals delivered right to your doorstep—fast, fresh, and
-                hassle-free.
-              </p>
-              <div class="mt-4 mt-lg-5 flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3">
-                <a
-                  href="#"
-                  class="btn btn-dark btn-download-app bg-black hover:bg-gray-800 text-white py-3 px-6 rounded-lg shadow-lg flex items-center justify-center transition duration-300 ease-in-out"
-                >
-                  <span class="d-flex align-items-center">
-                    <span class="icon icon-brand mr-2 mr-md-3">
-                      <span class="fab fa-apple text-2xl"> </span>
-                    </span>
-                    <span class="d-inline-block text-left">
-                      <small class="font-weight-normal text-xs opacity-80 block"
-                        >Available on</small
-                      >
-                      <span class="font-bold">App Store</span>
-                    </span>
-                  </span>
-                </a>
-                <a
-                  href="#"
-                  class="btn btn-dark btn-download-app bg-black hover:bg-gray-800 text-white py-3 px-6 rounded-lg shadow-lg flex items-center justify-center transition duration-300 ease-in-out"
-                >
-                  <span class="d-flex align-items-center">
-                    <span class="icon icon-brand mr-2 mr-md-3">
-                      <span class="fab fa-google-play text-2xl"> </span>
-                    </span>
-                    <span class="d-inline-block text-left">
-                      <small class="font-weight-normal text-xs opacity-80 block"
-                        >Available on</small
-                      >
-                      <span class="font-bold">Google Play</span>
-                    </span>
-                  </span>
-                </a>
-              </div>
+        <div class="relative inset-0 z-0"></div>
+    
+        <div class="container relative z-10 py-16 md:py-24 pb-0 mb-0">
+            <div class="flex flex-col md:flex-row items-center md:items-start justify-between">
+                <!-- Left Column: Text and Buttons -->
+                <div class="col-lg-6 md:w-1/2 text-left md:text-left mb-8 md:mb-0 md:pr-8">
+                    <h1 class="display-2 font-weight-bolder mb-4 text-black">
+                      Get Hot Meals Delivered Fast with <span>FastBite</span>
+                    </h1>
+                    <p class="lead mb-4 mb-lg-5 text-black-50">
+                        Craving something delicious? Discover food vendors around you and get your favorite meals delivered right to your doorstep—fast, fresh, and hassle-free.
+                    </p>
+                    <div class="mt-4 mt-lg-5">
+                        <a href="#" class="btn btn-dark btn-download-app mb-xl-0 mr-2 mr-md-3">
+                            <span class="d-flex align-items-center">
+                                <span class="icon icon-brand mr-2 mr-md-3">
+                                    <span class="fab fa-apple"> </span>
+                                </span>
+                                <span class="d-inline-block text-left">
+                                    <small class="font-weight-normal d-none d-md-block">Available on</small>
+                                    App Store
+                                </span>
+                            </span>
+                        </a>
+                        <a href="#" class="btn btn-dark btn-download-app">
+                            <span class="d-flex align-items-center">
+                                <span class="icon icon-brand mr-2 mr-md-3">
+                                    <span class="fab fa-google-play"> </span>
+                                </span>
+                                <span class="d-inline-block text-left">
+                                    <small class="font-weight-normal d-none d-md-block">Available on</small>
+                                    Google Play
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+    
+                <!-- Right Column: Image -->
+                <div class="col-lg-6 md:w-1/2 flex justify-center md:pl-8">
+                    <img class="w-full max-w-sm md:max-w-none h-auto rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-500 ease-in-out" src="assets/img/hero-image.png" alt="Mobile App Mockup" />
+                </div>
             </div>
-
-            <!-- Right Column: Image (takes half width on desktop, placed to the right) -->
-            <div class="col-lg-6 md:w-1/2 flex justify-center items-center mt-8 md:mt-0 md:pl-8">
-              <img
-                class="w-full max-w-sm md:max-w-none h-auto rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-500 ease-in-out"
-                src="assets/img/illustrations/hero1.png"
-                alt="Mobile App Mockup"
-              />
-            </div>
-          </div>
         </div>
       </section>
+
+      <section class="section section-header text-dark position-relative overflow-hidden py-8"
+         style="background-image: url('assets/img/bg.jpg'); background-size: cover; background-position: center;">
+    <!-- Overlay for better text readability on background image -->
+    <!-- Replaced Tailwind 'inset-0 bg-white opacity-10' with Bootstrap-friendly inline style for a 50% black overlay -->
+    <div class="position-absolute w-100 h-100 z-index: 0;"></div>
+
+    <!-- Container: Removed specific Tailwind padding classes (py-16 md:py-24 pb-0 mb-0) -->
+    <!-- 'py-8' on section now handles overall vertical spacing. 'position-relative' and 'z-index' are preserved. -->
+    <div class="container position-relative" style="z-index: 1;">
+        <!-- Converted Tailwind flexbox classes to Bootstrap d-flex and responsive flex classes -->
+        <div class="d-flex flex-column flex-md-row align-items-center align-items-md-start justify-content-between">
+            <!-- Left Column: Text and Buttons -->
+            <!-- col-lg-6 preserved, md:w-1/2 converted to col-md-6 for 50/50 split on medium screens and up -->
+            <!-- text-left preserved. mb-8 md:mb-0 converted to Bootstrap spacing. md:pr-8 to pr-md-5. -->
+            <div class="col-12 col-md-6 col-lg-6 text-left mb-5 mb-md-0 pr-md-5">
+                <!-- text-black changed to text-white for contrast. span text-red-500 changed to text-danger. -->
+                <h1 class="display-2 font-weight-bolder mb-4 text-white">
+                    Get Hot Meals Delivered Fast with <span class="text-danger">FastBite</span>
+                </h1>
+                <!-- text-black-50 changed to text-light for contrast -->
+                <p class="lead mb-4 mb-lg-5 text-light">
+                    Craving something delicious? Discover food vendors around you and get your favorite meals delivered right to your doorstep—fast, fresh, and hassle-free.
+                </p>
+                <!-- Button container: mt-4 mt-lg-5 preserved. Inner button d-flex, icon classes, etc., are compatible. -->
+                <div class="mt-4 mt-lg-5">
+                    <a href="#" class="btn btn-dark btn-download-app mb-xl-0 mr-2 mr-md-3">
+                        <span class="d-flex align-items-center">
+                            <span class="icon icon-brand mr-2 mr-md-3">
+                                <span class="fab fa-apple"> </span>
+                            </span>
+                            <span class="d-inline-block text-left">
+                                <small class="font-weight-normal d-none d-md-block">Available on</small>
+                                App Store
+                            </span>
+                        </span>
+                    </a>
+                    <a href="#" class="btn btn-dark btn-download-app">
+                        <span class="d-flex align-items-center">
+                            <span class="icon icon-brand mr-2 mr-md-3">
+                                <span class="fab fa-google-play"> </span>
+                            </span>
+                            <span class="d-inline-block text-left">
+                                <small class="font-weight-normal d-none d-md-block">Available on</small>
+                                Google Play
+                            </span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Column: Image -->
+            <!-- col-lg-6 preserved, md:w-1/2 converted to col-md-6. Tailwind flex converted to Bootstrap d-flex. -->
+            <!-- md:pl-8 converted to pl-md-5. -->
+            <div class="col-12 col-md-6 col-lg-6 d-flex justify-content-center align-items-center mt-5 mt-md-0 pl-md-5">
+                <!-- Replaced Tailwind image classes (w-full max-w-sm md:max-w-none h-auto rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-500 ease-in-out) -->
+                <!-- with Bootstrap's img-fluid for responsiveness, rounded, and shadow-lg. -->
+                <!-- Note: Hover scale/transition effects are not native Bootstrap utilities and would require custom CSS. -->
+                <img class="img-fluid rounded shadow-lg" src="assets/img/hero-image.png" alt="Mobile App Mockup" />
+            </div>
+        </div>
+    </div>
+</section>
 
       <!-- ======================================================== -->
       <!-- ============ END OF HERO SECTION ============ -->
