@@ -13,6 +13,11 @@
       name="viewport"
       content="width=device-width,initial-scale=1,shrink-to-fit=no"
     />
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+    <!-- Include Alpine.js -->
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -134,10 +139,7 @@
     <!-- End Google Tag Manager -->
   </head>
 
-
-
-
-  <body>
+  <body x-data="{ open: false }" :class="{ 'overflow-hidden': open }">
     <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe
@@ -148,85 +150,88 @@
       ></iframe
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <header class="header-global" id="home">
-      <nav
-        id="navbar-main"
-        aria-label="Primary navigation"
-        class="navbar navbar-main navbar-expand-lg navbar-theme-primary headroom navbar-light navbar-theme-secondary">
-        <div class="container position-relative">
-          <a class="navbar-brand mr-lg-4" href="index.html"
-            ><img
-              class="navbar-brand-dark" 
-              src="assets/img/fav-white.png"
-              alt="Logo light" />
-            <img
-              class="navbar-brand-light" 
-              src="assets/img/fav-white.png"
-              alt="Logo dark"
-          /></a>
-          <div class="navbar-collapse collapse mr-auto" id="navbar_global">
-            <div class="navbar-collapse-header">
-              <div class="row">
-                <div class="col-6 collapse-brand">
-                  <a href="index.html"
-                    ><img src="assets/img/fav.png" alt="Logo dark"
-                  /></a>
-                </div>
-                <div class="col-6 collapse-close">
-                  <a
-                    href="#navbar_global"
-                    class="fas fa-times"
-                    data-toggle="collapse"
-                    data-target="#navbar_global"
-                    aria-controls="navbar_global"
-                    aria-expanded="false"
-                    title="close"
-                    aria-label="Toggle navigation"
-                  ></a>
-                </div>
-              </div>
-            </div>
-            <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
-              <li class="nav-item">
-                <a href="privacy.html" class="nav-link">Privacy Policy</a>
-              </li>
-              <li class="nav-item">
-                <a href="#testimonials" class="nav-link">Testimonials</a>
-              </li>
-              <li class="nav-item"><a href="#faq" class="nav-link">FAQ</a></li>
-              
-            </ul>
-          </div>
-          <div class="d-flex align-items-center">
-            <a
-              href="#"
-              target="_blank"
-              class="btn btn-outline-soft d-none d-md-inline mr-md-3 animate-up-2">
-              Apple Download
-              <i class="fab fa-apple ml-2"></i></a>
-            <a
-              href="#"
-              target="_blank"
-              class="btn btn-md btn-tertiary text-white d-none d-md-inline animate-up-2">
-              Android Download
-              <i class="fab fa-google-play ml-2"></i></a>
-            <button
-              class="navbar-toggler ml-2"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbar_global"
-              aria-controls="navbar_global"
-              aria-expanded="false"
-              aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          </div>
-        </div>
-      </nav>
-    </header>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+<header id="home" class="fixed top-0 left-0 w-full bg-white shadow z-50">
+  <nav class="w-full">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center space-x-2">
+        <img src="assets/img/fav-white.png" alt="Logo light" class="hidden dark:block h-8 w-auto" />
+        <img src="assets/img/fav.png" alt="Logo dark" class="block dark:hidden h-8 w-auto" />
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="hidden lg:flex space-x-6 items-center">
+        <li><a href="#testimonials" class="text-gray-800 hover:text-blue-600">Privacy Policy</a></li>
+        <li><a href="#faq" class="text-gray-800 hover:text-blue-600">Terms and Conditions</a></li>
+      </ul>
+
+      <!-- CTA Buttons (Desktop only) -->
+      <div class="hidden md:flex items-center space-x-3">
+        <a href="#" class="border border-gray-300 text-gray-800 hover:bg-gray-100 px-4 py-2 rounded transition">
+          Apple Download <i class="fab fa-apple ml-2"></i>
+        </a>
+        <a href="#" class="bg-blue text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+          Android Download <i class="fab fa-google-play ml-2"></i>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button @click="open = true" class="lg:hidden text-gray-700 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer & Backdrop -->
+  <div
+    class="fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300"
+    x-show="open"
+    @click="open = false"
+    x-transition:enter="transition ease-out duration-200"
+    x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100"
+    x-transition:leave="transition ease-in duration-200"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
+  ></div>
+
+  <aside
+    class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg z-50 transform transition-transform duration-300"
+    x-show="open"
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="translate-x-full"
+    x-transition:enter-end="translate-x-0"
+    x-transition:leave="transition ease-in duration-300"
+    x-transition:leave-start="translate-x-0"
+    x-transition:leave-end="translate-x-full"
+    @click.away="open = false"
+  >
+    <div class="flex items-center justify-between px-4 py-4 border-b">
+      <span class="text-lg font-semibold">Menu</span>
+      <button @click="open = false" class="text-gray-500 hover:text-gray-700">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <ul class="flex flex-col px-4 py-6 space-y-4">
+      <li><a href="#" class="text-gray-800 hover:text-blue-600">Home</a></li>
+        <li><a href="#testimonials" class="text-gray-800 hover:text-blue-600">Testimonials</a></li>
+      <li><a href="#faq" class="text-gray-800 hover:text-blue-600">FAQ</a></li>
+    </ul>
+  </aside>
+</header>
     <main>
 
-    <section class="section section-header text-dark relative overflow-hidden pb-0 mb-0" style="background-image: url('assets/img/bg.jpg'); background-size: cover; background-position: center;">
+    <section class="section section-header text-white relative overflow-hidden pb-0 mb-0" style="background-image: url('assets/img/bg.jpg'); background-size: cover; background-position: center;">
       <!-- Overlay for better text readability on background image -->
       <div class="relative inset-0 z-0"></div>
   
@@ -234,10 +239,11 @@
           <div class="flex flex-col md:flex-row items-center md:items-start justify-between">
               <!-- Left Column: Text and Buttons -->
               <div class="col-lg-6 md:w-1/2 text-left md:text-left mb-8 md:mb-0 md:pr-8">
+                  
                   <h1 class="display-2 font-weight-bolder mb-4 text-black">
-                    Get Hot Meals Delivered Fast with <span>FastBite</span>
-                  </h1>
-                  <p class="lead mb-4 mb-lg-5 text-black-50">
+                    Get Hot Meals Delivered Fast with <span class="font-weight-bold" style="color: #2D6A4F;"><strong>FastBite</strong></span>
+                </h1>
+                  <p class="lead mb-4 mb-lg-5 text-black">
                       Craving something delicious? Discover food vendors around you and get your favorite meals delivered right to your doorstep—fast, fresh, and hassle-free.
                   </p>
                   <div class="mt-4 mt-lg-5">
@@ -276,7 +282,7 @@
     
     
 
-      <section class="section section-lg py-0 mt-8">
+      <section class="section section-lg py-0 mt-4">
         <div class="container">
           <div class="row">
             <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
@@ -285,7 +291,7 @@
                   <div class="icon icon-lg icon-primary mb-4">
                     <img src="assets/img/illustrations/vendors.png" class="w-50" alt=""/>
                   </div>
-                  <h2 class="h3 text-dark m-0">Discover Local Vendors</h2>
+                  <h2 class="h3 text-dark m-0"><strong>Discover Local <br>Vendors</strong></h2>
                 </div>
                 <div class="card-body">
                   <p>
@@ -300,7 +306,7 @@
                   <div class="icon icon-lg icon-primary mb-4">
                     <img src="assets/img/illustrations/order.png" class="w-50" alt=""/>
                   </div>
-                  <h2 class="h3 text-dark m-0">Order your favorite Meal</h2>
+                  <h2 class="h3 text-dark m-0"><strong>Order your favorite <br>Meal</strong></h2>
                 </div>
                 <div class="card-body">
                   <p>
@@ -316,7 +322,7 @@
                   <div class="icon icon-lg icon-primary mb-4">
                     <img src="assets/img/illustrations/fast.png" class="w-50" alt=""/>
                   </div>
-                  <h1 class="h2 text-dark m-0">fast Delivery to your Doorstep</h1>
+                  <h1 class="h2 text-dark m-0"><strong>Fast Delivery to your Doorstep</strong></h1>
                 </div>
                 <div class="card-body">
                   <p>
@@ -332,7 +338,7 @@
         <div class="container">
           <div class="row justify-content-center mb-5 mb-lg-7">
             <div class="col-12 col-lg-8 text-center">
-              <h2 class="h1 mb-4">Why Choose FastBite</h2>
+                <h2 class="display-3 mb-4"><strong>Why Choose <span class="font-weight-bold" style="color: #F4A261;"><strong>FastBite</strong></span></strong></h2>
               <p class="lead">
                 Choose FastBite for fast, reliable 
                 food delivery from trusted local vendors—fresh meals at your fingertips, anytime you’re hungry.
@@ -341,7 +347,7 @@
           </div>
           <div class="row row-grid align-items-center mb-5 mb-lg-7">
             <div class="col-12 col-lg-5">
-              <h2 class="h3 text-dark mb-4">Speed your can taste</h2>
+                <h2 class="display-3 mb-4"><strong>Speed you can <span class="font-weight-bold" style="color: #F4A261;"><strong>taste</strong></span></strong></h2>
               <p>
                 Fastbite delivers your meals hot and fresh—just like they were served straight from the kitchen. Our efficient delivery network ensures minimal wait time, so every bite feels like it just came off the stove.
               </p>
@@ -362,8 +368,7 @@
           </div>
           <div class="row row-grid align-items-center mb-5 mb-lg-7">
             <div class="col-12 col-lg-5 order-lg-2">
-              
-              <h3 class="h3">Local Flavour, Wide Variety</h3>
+                <h2 class="display-3 mb-4"><strong>Local <span class="font-weight-bold" style="color: #F4A261;"><strong>Flavour,</strong></span>  Wide<span class="font-weight-bold" style="color: #F4A261;"><strong> Variety</strong> </span></strong></h2>
               <p>FastBite connects you with a rich mix of neighborhood vendors offering everything from traditional local dishes to modern favorites. Whether you're craving jollof rice, shawarma, soups, or smoothies, there's something for every appetite.
               </p>
               <a href="#testimonials" class="btn btn-dark mt-3 animate-up-2"
@@ -382,8 +387,7 @@
           </div>
           <div class="row row-grid align-items-center mb-5 mb-lg-7">
             <div class="col-12 col-lg-5">
-              
-              <h2 class="h3 text-dark mb-4">Track your order in real time</h2>
+                <h2 class="display-3 mb-4"><strong>Track your <span class="font-weight-bold" style="color: #F4A261;"><strong>order</strong></span>  in<span class="font-weight-bold" style="color: #F4A261;"> <strong> real time</strong></span></strong></h2>
               <p>Stay in the loop from the moment you order to delivery. With real-time tracking, you can see when your food is being prepared, picked up, and exactly where your rider is on the map.
               </p>
               <a href="#testimonials" class="btn btn-dark mt-3 animate-up-2"
@@ -404,9 +408,9 @@
             <div class="col-12 col-md-6 col-lg-4 mb-4">
               <div class="card border-light p-4 text-white" style="background-color: #2d6a4f;" >
                 <div class="card-body text-center">
-                  <h2 class="display-2 mb-2">30mins</h2>
+                  <h2 class="display-2 mb-2"><strong>30mins</strong></h2>
                   <span
-                    >Average delivery time.</span
+                    ><strong>Average delivery time.</strong></span
                   >
                 </div>
               </div>
@@ -414,16 +418,16 @@
             <div class="col-12 col-md-6 col-lg-4 mb-4">
               <div class="card border-light p-4 text-white" style="background-color: #2d6a4f;" >
                 <div class="card-body text-center" >
-                  <h2 class="display-2 mb-2">1k+</h2>
-                  <span>Resturants.</span>
+                  <h2 class="display-2 mb-2"><strong>1k+</strong></h2>
+                  <span><strong>Resturants</strong>.</span>
                 </div>
               </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4 mb-4">
               <div class="card border-light p-4 text-white" style="background-color: #2d6a4f;">
                 <div class="card-body text-center">
-                  <h2 class="display-2 mb-2">Live</h2>
-                  <span>Real Tracking update.</span>
+                  <h2 class="display-2 mb-2"><strong>Live</strong></h2>
+                  <span><strong>Real Tracking update.</strong></span>
                 </div>
               </div>
             </div>
@@ -435,7 +439,7 @@
           <div class="row text-center mb-5">
             <div class="col">
               <h1 class="display-2 font-weight-bolder mb-4 text-black">
-                Get Hot Meals Delivered Fast with FastBite
+                Get Hot <span class="font-weight-bold" style="color: #F4A261;"><strong>Meals</strong></span> Delivered Fast with FastBite
               </h1>
             </div>
           </div>
@@ -506,7 +510,7 @@
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-12 col-md-10 text-center mb-5 mb-lg-6">
-              <h2 class="display-3 mb-4">Customers love it</h2>
+              <h2 class="display-3 mb-4"><strong>Customers <span class="font-weight-bold" style="color: #F4A261;"><strong>love</strong></span>  it</strong></h2>
               <p class="lead">
                 The final result of our formula at work. Check out what our
                 clients<br class="d-none d-lg-inline-block" />have to say about
@@ -650,201 +654,100 @@
           </div>
         </div>
       </section>
-      <section class="section section-lg" id="faq">
-        <div class="container">
-          <div class="row justify-content-center mb-5">
-            <div class="col-12 text-center mb-4 mb-lg-5">
-              <h2 class="display-3 mb-4">Facts & Questions</h2>
-              <p class="lead">
-                Have a question? Read through our FAQ below. If you can't find
-                an answer,<br class="d-none d-lg-inline-block" />please email
-                our support team. We're here to help.
-              </p>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-12 col-md-10">
-              <!--Accordion-->
-              <div class="accordion" id="accordionExample">
-                <div class="card border-light mb-0">
-                  <div class="card-header" id="headingOne">
-                    <h2 class="mb-0">
-                      <button
-                        class="btn btn-link btn-block d-flex justify-content-between text-left"
-                        type="button"
-                        data-toggle="collapse"
-                        data-target="#collapseOne"
-                        aria-expanded="true"
-                        aria-controls="collapseOne">
-                        <span class="h6 mb-0 font-weight-bold"> How do I place an order on FastBite?</span>
-                        <span class="icon">
-                          <span class="fas fa-plus"></span>
-                        </span>
-                      </button>
-                    </h2>
-                  </div>
-                  <div
-                    id="collapseOne"
-                    class="collapse show"
-                    aria-labelledby="headingOne"
-                    data-parent="#accordionExample">
-                    <div class="card-body">
-                      <p class="mb-0">
-                        Simply download the FastBite app, create an account, 
-                        browse vendors in your area, select your meal, and check out. Your order will be confirmed and delivered to your location.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="card border-light mb-0">
-                  <div class="card-header" id="headingTwo">
-                    <h2 class="mb-0">
-                      <button
-                        class="btn btn-link btn-block d-flex justify-content-between text-left"
-                        type="button"
-                        data-toggle="collapse"
-                        data-target="#collapseTwo"
-                        aria-expanded="false"
-                        aria-controls="collapseTwo">
-                        <span class="h6 mb-0 font-weight-bold">Is FastBite available in my city?</span>
-                        <span class="icon"><span class="fas fa-plus"></span>
-                      </span>
-                      </button>
-                    </h2>
-                  </div>
-                  <div
-                    id="collapseTwo"
-                    class="collapse"
-                    aria-labelledby="headingTwo"
-                    data-parent="#accordionExample">
-                    <div class="card-body">
-                      <p class="mb-0">
-                        We’re constantly expanding! FastBite is currently available in major cities and towns. 
-                        Download the app and turn on location services to see if we operate in your area.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="card border-light mb-0">
-                  <div class="card-header" id="headingThree">
-                    <h2 class="mb-0">
-                      <button
-                        class="btn btn-link btn-block d-flex justify-content-between text-left"
-                        type="button"
-                        data-toggle="collapse"
-                        data-target="#collapseThree"
-                        aria-expanded="false"
-                        aria-controls="collapseThree">
-                        <span class="h6 mb-0 font-weight-bold">How long does delivery usually take?</span>
-                        <span class="icon"><span class="fas fa-plus"></span></span>
-                      </button>
-                    </h2>
-                  </div>
-                  <div
-                    id="collapseThree"
-                    class="collapse"
-                    aria-labelledby="headingThree"
-                    data-parent="#accordionExample">
-                    <div class="card-body">
-                      <p class="mb-0">
-                        On average, orders are delivered within 30–45 minutes,
-                         depending on your location and vendor distance. You can track your delivery in real-time through the app.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="card border-light mb-0">
-                  <div class="card-header" id="headingFour">
-                    <h2 class="mb-0">
-                      <button
-                        class="btn btn-link btn-block d-flex justify-content-between text-left"
-                        type="button"
-                        data-toggle="collapse"
-                        data-target="#collapseFour"
-                        aria-expanded="false"
-                        aria-controls="collapseFour">
-                        <span class="h6 mb-0 font-weight-bold">Can I pay with cash or only online?</span>
-                        <span class="icon"><span class="fas fa-plus"></span></span>
-                      </button>
-                    </h2>
-                  </div>
-                  <div
-                    id="collapseFour"
-                    class="collapse"
-                    aria-labelledby="headingFour"
-                    data-parent="#accordionExample">
-                    <div class="card-body">
-                      <p class="mb-0">
-                        We support multiple payment options: debit/credit cards, mobile money, 
-                        and cash on delivery (where available). Choose your preferred payment method at checkout.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="card border-light mb-0">
-                  <div class="card-header" id="headingFive">
-                    <h2 class="mb-0">
-                      <button
-                        class="btn btn-link btn-block d-flex justify-content-between text-left"
-                        type="button"
-                        data-toggle="collapse"
-                        data-target="#collapseFive"
-                        aria-expanded="false"
-                        aria-controls="collapseFive">
-                        <span class="h6 mb-0 font-weight-bold"
-                          >How do I become a food vendor on FastBite?</span>
-                        <span class="icon"><span class="fas fa-plus"></span></span>
-                      </button>
-                    </h2>
-                  </div>
-                  <div
-                    id="collapseFive"
-                    class="collapse"
-                    aria-labelledby="headingFive"
-                    data-parent="#accordionExample">
-                    <div class="card-body">
-                      <p class="mb-0">
-                        Visit our website or open the app and click “Become a Vendor.” 
-                        Fill out the registration form, upload your menu and business details, and our team will reach out for onboarding.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="card border-light mb-0">
-                  <div class="card-header" id="headingSix">
-                    <h2 class="mb-0">
-                      <button
-                        class="btn btn-link btn-block d-flex justify-content-between text-left"
-                        type="button"
-                        data-toggle="collapse"
-                        data-target="#collapseSix"
-                        aria-expanded="false"
-                        aria-controls="collapseSix">
-                        <span class="h6 mb-0 font-weight-bold"
-                          >What happens if I have an issue with my order?</span>
-                        <span class="icon"><span class="fas fa-plus"></span></span>
-                      </button>
-                    </h2>
-                  </div>
-                  <div
-                    id="collapseSix"
-                    class="collapse"
-                    aria-labelledby="headingSix"
-                    data-parent="#accordionExample">
-                    <div class="card-body">
-                      <p class="mb-0">
-                        If you encounter any issues, you can reach our 24/7 support team via the app's Help section. 
-                        We’ll resolve your complaint as quickly as possible—your satisfaction is our priority.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!--End of Accordion-->
-            </div>
-          </div>
+      <!-- Alpine.js is required -->
+
+<section id="faq" class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-lg-6">
+      <h2 class="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+      <p class="text-lg text-black">
+        Have a question? Read through our FAQ below. If you can't find an answer,<br class="hidden lg:inline-block" />
+        please email our support team. We're here to help.
+      </p>
+    </div>
+
+    <div class="w-full mx-auto space-y-4" x-data="{ openItem: 1 }">
+      <!-- Accordion Item 1 -->
+      <div class="border border-gray-500 rounded-lg overflow-hidden">
+        <button
+          class="w-full flex justify-between items-center px-6 py-4 text-left text-gray-800 font-semibold hover:bg-gray-50"
+          @click="openItem === 1 ? openItem = null : openItem = 1">
+          <span>How do I place an order on FastBite?</span>
+          <span class="text-xl"><i class="fas" :class="openItem === 1 ? 'fa-minus' : 'fa-plus'"></i></span>
+        </button>
+        <div x-show="openItem === 1" x-collapse class="px-6 pb-4 text-black">
+          Simply download the FastBite app, create an account, browse vendors in your area, select your meal, and check out. Your order will be confirmed and delivered to your location.
         </div>
-      </section>
+      </div>
+
+      <!-- Accordion Item 2 -->
+      <div class="border border-gray-500 rounded-lg overflow-hidden">
+        <button
+          class="w-full flex justify-between items-center px-6 py-4 text-left text-gray-800 font-semibold hover:bg-gray-50"
+          @click="openItem === 2 ? openItem = null : openItem = 2">
+          <span>Is FastBite available in my city?</span>
+          <span class="text-xl"><i class="fas" :class="openItem === 2 ? 'fa-minus' : 'fa-plus'"></i></span>
+        </button>
+        <div x-show="openItem === 2" x-collapse class="px-6 pb-4 text-black">
+          We’re constantly expanding! FastBite is currently available in major cities and towns. Download the app and turn on location services to see if we operate in your area.
+        </div>
+      </div>
+
+      <!-- Accordion Item 3 -->
+      <div class="border border-gray-500 rounded-lg overflow-hidden">
+        <button
+          class="w-full flex justify-between items-center px-6 py-4 text-left text-gray-800 font-semibold hover:bg-gray-50"
+          @click="openItem === 3 ? openItem = null : openItem = 3">
+          <span>How long does delivery usually take?</span>
+          <span class="text-xl"><i class="fas" :class="openItem === 3 ? 'fa-minus' : 'fa-plus'"></i></span>
+        </button>
+        <div x-show="openItem === 3" x-collapse class="px-6 pb-4 text-black">
+          On average, orders are delivered within 30–45 minutes, depending on your location and vendor distance. You can track your delivery in real-time through the app.
+        </div>
+      </div>
+
+      <!-- Accordion Item 4 -->
+      <div class="border border-gray-500 rounded-lg overflow-hidden">
+        <button
+          class="w-full flex justify-between items-center px-6 py-4 text-left text-gray-800 font-semibold hover:bg-gray-50"
+          @click="openItem === 4 ? openItem = null : openItem = 4">
+          <span>Can I pay with cash or only online?</span>
+          <span class="text-xl"><i class="fas" :class="openItem === 4 ? 'fa-minus' : 'fa-plus'"></i></span>
+        </button>
+        <div x-show="openItem === 4" x-collapse class="px-6 pb-4 text-black">
+          We support multiple payment options: debit/credit cards, mobile money, and cash on delivery (where available). Choose your preferred payment method at checkout.
+        </div>
+      </div>
+
+      <!-- Accordion Item 5 -->
+      <div class="border border-gray-500 rounded-lg overflow-hidden">
+        <button
+          class="w-full flex justify-between items-center px-6 py-4 text-left text-gray-800 font-semibold hover:bg-gray-50"
+          @click="openItem === 5 ? openItem = null : openItem = 5">
+          <span>How do I become a food vendor on FastBite?</span>
+          <span class="text-xl"><i class="fas" :class="openItem === 5 ? 'fa-minus' : 'fa-plus'"></i></span>
+        </button>
+        <div x-show="openItem === 5" x-collapse class="px-6 pb-4 text-black">
+          Visit our website or open the app and click “Become a Vendor.” Fill out the registration form, upload your menu and business details, and our team will reach out for onboarding.
+        </div>
+      </div>
+
+      <!-- Accordion Item 6 -->
+      <div class="border border-gray-500 rounded-lg overflow-hidden">
+        <button
+          class="w-full flex justify-between items-center px-6 py-4 text-left text-gray-800 font-semibold hover:bg-gray-50"
+          @click="openItem === 6 ? openItem = null : openItem = 6">
+          <span>What happens if I have an issue with my order?</span>
+          <span class="text-xl"><i class="fas" :class="openItem === 6 ? 'fa-minus' : 'fa-plus'"></i></span>
+        </button>
+        <div x-show="openItem === 6" x-collapse class="px-6 pb-4 text-black">
+          If you encounter any issues, you can reach our 24/7 support team via the app's Help section. We’ll resolve your complaint as quickly as possible—your satisfaction is our priority.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
       <div class="section bg-soft" id="download">
         <figure
           class="position-absolute top-0 left-0 w-100 d-none d-md-block mt-n3">
@@ -864,10 +767,10 @@
           </svg>
         </figure>
         <div class="container">
-          <div class="row row-grid align-items-center">
-            <div class="col-12 col-lg-6">
+          <div class="row row-grid align-items-center pb-0 mb-0">
+            <div class="col-12 col-lg-6 pb-0 mb-0">
               <span class="h5 text-muted mb-2 d-block">Download App</span>
-              <h2 class="display-3 mb-4">Get started in seconds</h2>
+              <h2 class="display-3 mb-4"><strong>Get started in seconds</strong> </h2>
               <p class="lead text-muted">
                 Hungry? Don’t wait. With the FastBite app, you’re just a few taps away from your next meal.
               </p>
@@ -901,13 +804,12 @@
                   </a>
               </div>
             </div>
-            <div class="col-12 col-lg-5 ml-lg-auto mt-0">
-              <img
-                class="d-none d-lg-inline-block"
-                src="assets/img/three.png"
-                alt="Mobile App Illustration"
-              />
-            </div>
+            <div class="col-12 col-lg-6 mt-4 mt-lg-0  mb-0 pb-0">
+                <img
+                  src="assets/img/three.png"
+                  alt="Mobile App Illustration"
+                  class="img-fluid"
+                />
           </div>
         </div>
       </div>
