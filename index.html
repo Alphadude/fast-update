@@ -234,7 +234,9 @@
 
     <section class="section section-header text-white relative overflow-hidden pb-0 mb-0" style="background-image: url('assets/img/bg.jpg'); background-size: cover; background-position: center;">
       <!-- Overlay for better text readability on background image -->
-      <div class="relative inset-0 z-0"></div>
+      <div class="absolute inset-0 opacity-50 z-0"></div>
+
+      <!-- <div class="relative inset-0 z-0"></div> -->
   
       <div class="container relative z-10 py-16 md:py-24 pb-0 mb-0">
           <div class="flex flex-col md:flex-row items-center md:items-start justify-between">
@@ -419,7 +421,7 @@
             <div class="col-12 col-md-6 col-lg-4 mb-4">
               <div class="card border-light p-4 text-white" style="background-color: #2d6a4f;" >
                 <div class="card-body text-center" >
-                  <h2 class="display-2 mb-2"><strong>1k+</strong></h2>
+                  <h2 class="display-2 mb-2"><strong>50+</strong></h2>
                   <span><strong>Resturants</strong>.</span>
                 </div>
               </div>
@@ -716,7 +718,7 @@
           <span class="text-xl"><i class="fas" :class="openItem === 4 ? 'fa-minus' : 'fa-plus'"></i></span>
         </button>
         <div x-show="openItem === 4" x-collapse class="px-6 pb-4 text-black">
-          We support multiple payment options: debit/credit cards, mobile money, and cash on delivery (where available). Choose your preferred payment method at checkout.
+          We've got you covered! From cards to transfers, we support multiple payment options—just pick what works for you at checkout and your meal will be on its way!
         </div>
       </div>
 
