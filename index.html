@@ -735,15 +735,27 @@
         </div>
       </div>
 
-      <!-- Accordion Item 6 -->
       <div class="border border-gray-500 rounded-lg overflow-hidden">
         <button
           class="w-full flex justify-between items-center px-6 py-4 text-left text-gray-800 font-semibold hover:bg-gray-50"
           @click="openItem === 6 ? openItem = null : openItem = 6">
-          <span>What happens if I have an issue with my order?</span>
+          <span>How do I become a Dispatch Rider on FastBite?</span>
           <span class="text-xl"><i class="fas" :class="openItem === 6 ? 'fa-minus' : 'fa-plus'"></i></span>
         </button>
         <div x-show="openItem === 6" x-collapse class="px-6 pb-4 text-black">
+          Visit our website or download the Rider app and click “Become a Rider.” Fill out the registration form, upload your info and our team will reach out for onboarding.
+        </div>
+      </div>
+
+      <!-- Accordion Item 6 -->
+      <div class="border border-gray-500 rounded-lg overflow-hidden">
+        <button
+          class="w-full flex justify-between items-center px-6 py-4 text-left text-gray-800 font-semibold hover:bg-gray-50"
+          @click="openItem === 7 ? openItem = null : openItem = 7">
+          <span>What happens if I have an issue with my order?</span>
+          <span class="text-xl"><i class="fas" :class="openItem === 7 ? 'fa-minus' : 'fa-plus'"></i></span>
+        </button>
+        <div x-show="openItem === 7" x-collapse class="px-6 pb-4 text-black">
           If you encounter any issues, you can reach our 24/7 support team via the app's Help section. We’ll resolve your complaint as quickly as possible—your satisfaction is our priority.
         </div>
       </div>
